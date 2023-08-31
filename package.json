@@ -7,7 +7,22 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "deploy-to-git",
+    "build-my-app": "a-build-script"
+  },
+  "config": {
+    "deployToGit": {
+        "repository": "https://github.com/victor-buldenko/react_dinamic-list-of-post--vite-zustand.git",
+        "branch": "gh-pages",
+        "folder": "build",
+        "script": "npm run build-my-app",
+        "commit": "Automatic commit text",
+        "user": {
+            "email": "gookidoo@gmail.com",
+            "name": "Victor Buldenko"
+        }
+    }
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
@@ -29,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "deploy-to-git": "^0.4.1",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
